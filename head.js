@@ -1,4 +1,3 @@
-// FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   //if the values are the same, return success message
   if (actual === expected) {
@@ -9,12 +8,9 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("James's Laptop", "James's Laptop");
-assertEqual("Hello", "Bonjour");
-assertEqual(12, 12);
-assertEqual(12, 19);
+let head = function(array) {
+  return array[0];
+};
 
-
+assertEqual(head([5,6,7]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
