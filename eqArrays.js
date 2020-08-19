@@ -24,8 +24,8 @@ let tail = function(array) {
 
 //if the heads and tails of the array are the same, then the arrays are the same, so we can return true.
 let eqArrays = function(arr1, arr2) {
-  let tailOne = tail(arr1).join(', ');
-  let tailTwo = tail(arr2).join(', ');
+  let tailOne = tail(arr1).join(', '); 
+  let tailTwo = tail(arr2).join(', '); //take the array that comes out of tail and turn it into a string/number
   if (head(arr1) === head(arr2) && tailOne === tailTwo) {
     return true;
   } else {

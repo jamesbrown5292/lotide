@@ -21,6 +21,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+//UPDATED VERSION
 let eqArrays = function(arr1, arr2) {
   let tailOne = tail(arr1).join(', ');
   let tailTwo = tail(arr2).join(', ');
@@ -126,23 +127,21 @@ const eqObjects = function(object1, object2) {
     return false;
   } else {
     for (let item of keys1) {
-      if (object1[item] !== object2[item]) {
-        return false;
+      if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
+        if (eqArrays(object1[item], object2[item])) {
+          return true;
+        }
       }
     }
   }
-  return true;
+  return false;
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
-const obby = {x: "mark", l: "harrison", v: "emma"};
-const obbo = {x: "mark", l: "john", v: "emma"};
-const nobby = {x: "mark", l: "harrison", v: "emma"};
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
 
-assertEqual(eqObjects(nobby, obby), true);
-assertEqual(eqObjects(obby,obbo), false);
+eqObjects(cd, dc); // => true
+console.log(assertEqual(eqObjects(cd, dc), true));
+const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log(assertEqual(eqObjects(cd, cd2), false)); // => false
