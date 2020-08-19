@@ -71,9 +71,9 @@ let countOnly = function(allItems, itemsToCount) {
       }
     }
   }
-  return results;   
-}
-//TEST CODE 
+  return results;
+};
+//TEST CODE
 const firstNames = [
   "Karl",
   "Salima",
