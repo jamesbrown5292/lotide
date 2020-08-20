@@ -61,7 +61,6 @@ let middle = function(arr1) {
 //fuction takes an array and objec
 let countOnly = function(allItems, itemsToCount) {
   let results = {};
-
   for (const item of allItems) {
     if (itemsToCount[item]) {
       if (results[item]) {
@@ -73,6 +72,7 @@ let countOnly = function(allItems, itemsToCount) {
   }
   return results;
 };
+
 //TEST CODE
 const firstNames = [
   "Karl",

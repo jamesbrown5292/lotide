@@ -31,6 +31,7 @@ let assertArraysEqual = function(arr1, arr2) {
 };
 //implement a funtion middle which returns the middle value of an array
 let middle = function(arr1) {
+
   let arrayLength = arr1.length;
   let midValue = Math.floor(arrayLength / 2);
   if (arrayLength <= 2) {
@@ -47,3 +48,6 @@ let middle = function(arr1) {
 
 //test cases
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8]), [4, 5]);
+assertArraysEqual(middle([1, 8]), []);
+assertArraysEqual(middle([1, 2, 3,]), [2]);
+assertArraysEqual(middle([1]), []);

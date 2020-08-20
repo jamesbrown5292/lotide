@@ -32,5 +32,5 @@ let eqArrays = function(arr1, arr2) {
     return false;
   }
 };
-assertEqual(eqArrays([12, 32, 23], [12, 32, 23]), true);
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+let upperCase = map(words, word => word[0].toUpperCase())
+assertArraysEqual
