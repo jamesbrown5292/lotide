@@ -132,8 +132,22 @@ const eqObjects = function(object1, object2) {
           return true;
         }
       }
-    };
+    }
     return false;
   }
 };
 
+//IMPLEMENT ASSERT OBJECTS EQUAL
+
+const assertObjectsEqual = function(actual, expected) {
+  if (eqObjects(actual, expected)) {
+    return "`😀👍 Object comparison passed, objects are the same ";
+  } else {
+    return "😫👎 Array comparison failed, objects are not the same";
+  }
+};
+
+
+let obby = {a: 5, b: 5, c: 7, d: [1, 2, 3]};
+let obbo = {a: 5, b: 6, c: 7, d: [1, 2, 3]};
+console.log(assertObjectsEqual(obby, obbo));
