@@ -39,25 +39,24 @@ assertArraysEqual */
 
 const eqArrays = function(a1, a2) {
   let result = true;
-  for (let i = 0; i < a1.length; i++) {
-    for (let j=0; j <a2.length; j++) {
-      if (typeof a1[i] !== typeof a2[j]) {
-        result = false;
+  for (let i = 0; i < a1.length; i++ ) {
+    //if the two arrays are different lengths, result is false;
+    if (a1.length !== a2.length) {
+      return false; 
+    };
+    if (typeof a1[i] === "number" && typeof a2[i] === "number") {
+      if (a1[i] !== a2[i]) {
+        return false;
       }
-      if (!Array.isArray(a1[i]) && !Array.isArray(a2[j])) {
-        if (a1[i] !== a2[j]) {
-          result = false;
-        }
+    };
+    if (typeof a1[i] === "object" && typeof a2[i] === "object") {
+      if (!Array.isArray(a1[i]) && !Array.isArray(a2[i])) {
+        return false;
       }
-      if (a1[i].length !== a2[j].length) {
-        result = false;
-      };
-      console.log(a1[i], i, j)
-      return eqArrays(a1[i], a2[j]);
-    }
+    } 
+    result = eqArrays(a1[i], a2[i]);
   }
   return result;
 };
-console.log(eqArrays([ [2, 3], [4] ], [ [2, 3], [4]  ])); // => true
-//console.log(eqArrays(   [[2, 3], [4]]  , [[2, 3], [4, 5]]   )); // => false
-//console.log(eqArrays([[2, 3], [4]], [[2, 3], 4])); // => false
+
+module.exports = eqArrays;
