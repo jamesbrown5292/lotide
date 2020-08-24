@@ -1,4 +1,4 @@
-const eqObjects = require('./eqObjects')
+const eqObjects = require('./eqObjects');
 
 //IMPLEMENT ASSERT OBJECTS EQUAL
 

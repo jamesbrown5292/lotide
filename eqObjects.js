@@ -1,4 +1,4 @@
-const eqObjects = function(o1, o2){
+const eqObjects = function(o1, o2) {
   let result = true;
   let o1keys = Object.keys(o1);
   let o2keys = Object.keys(o2);

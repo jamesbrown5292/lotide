@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jamesbrown5292/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A copy of the lodash library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/jamesbrown5292/lotide.git"
   },
-  "author": "",
+  "author": "James Brown",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jamesbrown5292/lotide/issues"
